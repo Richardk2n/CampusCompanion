@@ -5,8 +5,15 @@
     <item
         android:id="@+id/settings"
         android:orderInCategory="100"
-        android:showAsAction="always"
+        android:showAsAction="ifRoom"
         android:title="@string/settings"
         android:icon="@android:drawable/ic_menu_preferences"/>
+    
+    <item
+        android:id="@+id/menue"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/menue"
+        android:icon="@drawable/menue" />
 
 </menu>
