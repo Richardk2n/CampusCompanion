@@ -14,5 +14,11 @@
     <string name="frischraum">Frischraum</string>
     <string name="cafetaria">Cafetaria</string>
     <string name="noPicYet">Bis jetzt ist kein Bild vorhanden</string>
+    <string name="settings">Einstellungen</string>
+    <string name="start">Startseite</string>
+    <string name="mensa">Lieblingsmensa</string>
+    <string name="savenclose">Speichern und Beenden</string>
+    <string name="food">Speißeplan</string>
+    <string name="config">Einstellungen</string>
 
 </resources>

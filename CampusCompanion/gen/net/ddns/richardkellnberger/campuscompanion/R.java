@@ -22,29 +22,39 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int minus=0x7f020001;
-        public static final int nopic=0x7f020002;
-        public static final int plus=0x7f020003;
+        public static final int config=0x7f020000;
+        public static final int food=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int minus=0x7f020003;
+        public static final int nopic=0x7f020004;
+        public static final int plus=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f080010;
-        public static final int day=0x7f080006;
-        public static final int dayLayout=0x7f080004;
-        public static final int image=0x7f080003;
-        public static final int item=0x7f08000d;
-        public static final int last=0x7f080005;
-        public static final int m1=0x7f080009;
-        public static final int m2=0x7f08000a;
-        public static final int m3=0x7f08000b;
-        public static final int name=0x7f080001;
-        public static final int next=0x7f080007;
-        public static final int pageLayout=0x7f080008;
-        public static final int pager=0x7f08000c;
-        public static final int price=0x7f08000e;
-        public static final int priceTag=0x7f080002;
-        public static final int rating=0x7f08000f;
-        public static final int ratingBar=0x7f080000;
+        public static final int action_settings=0x7f080017;
+        public static final int config=0x7f080013;
+        public static final int day=0x7f08000b;
+        public static final int dayLayout=0x7f080009;
+        public static final int food=0x7f080012;
+        public static final int image=0x7f080008;
+        public static final int item=0x7f080014;
+        public static final int last=0x7f08000a;
+        public static final int m1=0x7f08000e;
+        public static final int m2=0x7f08000f;
+        public static final int m3=0x7f080010;
+        public static final int mensa=0x7f080002;
+        public static final int name=0x7f080006;
+        public static final int next=0x7f08000c;
+        public static final int pageLayout=0x7f08000d;
+        public static final int pager=0x7f080011;
+        public static final int price=0x7f080015;
+        public static final int priceTag=0x7f080007;
+        public static final int rating=0x7f080016;
+        public static final int ratingBar=0x7f080005;
+        public static final int save=0x7f080004;
+        public static final int settings=0x7f080018;
+        public static final int spinnerMensa=0x7f080003;
+        public static final int spinnerStart=0x7f080001;
+        public static final int start=0x7f080000;
     }
     public static final class layout {
         public static final int activity_config=0x7f030000;
@@ -66,12 +76,18 @@ public final class R {
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
         public static final int cafetaria=0x7f05000b;
+        public static final int config=0x7f050012;
+        public static final int food=0x7f050011;
         public static final int frischraum=0x7f05000a;
         public static final int hauptmensa=0x7f050009;
         public static final int hello_world=0x7f050001;
+        public static final int mensa=0x7f05000f;
         public static final int minus=0x7f050006;
         public static final int noPicYet=0x7f05000c;
         public static final int plus=0x7f050007;
+        public static final int savenclose=0x7f050010;
+        public static final int settings=0x7f05000d;
+        public static final int start=0x7f05000e;
         public static final int title_activity_config=0x7f050003;
         public static final int title_activity_dish=0x7f050008;
         public static final int title_activity_food=0x7f050004;

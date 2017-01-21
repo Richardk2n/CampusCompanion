@@ -3,6 +3,7 @@ package net.ddns.richardkellnberger.campuscompanion;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import net.ddns.richardkellnberger.campuscompanion.helper.SQLHandler;
 import net.ddns.richardkellnberger.campuscompanion.views.FoodFragment;
 
 public class FoodActivity extends FragmentActivity {
@@ -109,9 +111,20 @@ public class FoodActivity extends FragmentActivity {
 				pager.setCurrentItem(2);
 			}
 		});
-		
-		pager.setCurrentItem(0); //TODO setting default
-		update(0);
+
+		int index = 0;
+		String mensaDB = new SQLHandler(this).getConfig("mensa");
+		System.out.println(mensaDB);
+		if(mensaDB!=null) {
+			for(int i = 0; i<3; i++) {
+				if(mensen[i].equals(mensaDB)) {
+					index = i;
+					break;
+				}
+			}
+		}
+		pager.setCurrentItem(index);
+		update(index);
 	}
 	
 	private void update(int page) {
@@ -144,7 +157,8 @@ public class FoodActivity extends FragmentActivity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		if (id == R.id.settings) {
+			startActivity(new Intent(this, ConfigActivity.class));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

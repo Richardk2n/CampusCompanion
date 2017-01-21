@@ -9,8 +9,43 @@
     tools:context="net.ddns.richardkellnberger.campuscompanion.ConfigActivity" >
 
     <TextView
+        android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="@string/start" />
+
+    <Spinner
+        android:id="@+id/spinnerStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/start" />
+
+    <TextView
+        android:id="@+id/mensa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/spinnerStart"
+        android:textSize="20sp"
+        android:text="@string/mensa" />
+
+    <Spinner
+        android:id="@+id/spinnerMensa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/mensa" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/savenclose" />
 
 </RelativeLayout>
