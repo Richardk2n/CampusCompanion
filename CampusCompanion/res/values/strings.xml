@@ -13,5 +13,6 @@
     <string name="hauptmensa">Hauptmensa</string>
     <string name="frischraum">Frischraum</string>
     <string name="cafetaria">Cafetaria</string>
+    <string name="noPicYet">Bis jetzt ist kein Bild vorhanden</string>
 
 </resources>

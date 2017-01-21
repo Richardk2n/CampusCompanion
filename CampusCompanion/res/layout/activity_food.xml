@@ -29,12 +29,12 @@
             android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:contentDescription="@string/plus"
             android:src="@drawable/plus" />
     </RelativeLayout>
-    
+
     <RelativeLayout
         android:id="@+id/pageLayout"
         android:layout_width="match_parent"
@@ -49,16 +49,16 @@
             android:layout_alignParentStart="true"
             android:layout_toLeftOf="@+id/m2"
             android:layout_toStartOf="@+id/m2"
-            android:text="@string/hauptmensa"
-            android:background="@android:color/holo_blue_dark" />
+            android:background="@android:color/holo_blue_dark"
+            android:text="@string/hauptmensa" />
 
         <Button
             android:id="@+id/m2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@string/frischraum"
-            android:background="@android:color/holo_green_dark" />
+            android:background="@android:color/holo_green_dark"
+            android:text="@string/frischraum" />
 
         <Button
             android:id="@+id/m3"
@@ -69,9 +69,8 @@
             android:layout_alignParentRight="true"
             android:layout_toEndOf="@+id/m2"
             android:layout_toRightOf="@+id/m2"
-            android:text="@string/cafetaria"
-            android:background="@android:color/holo_orange_dark" />
-
+            android:background="@android:color/holo_orange_dark"
+            android:text="@string/cafetaria" />
     </RelativeLayout>
 
     <android.support.v4.view.ViewPager

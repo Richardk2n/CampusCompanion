@@ -1,9 +1,12 @@
 package net.ddns.richardkellnberger.campuscompanion;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
 public class DishActivity extends Activity {
 
@@ -11,6 +14,11 @@ public class DishActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dish);
+		
+		Intent intent = getIntent();
+		((TextView) findViewById(R.id.name)).setText(intent.getStringExtra("name"));
+		((TextView) findViewById(R.id.priceTag)).setText(intent.getStringExtra("price"));
+		((RatingBar) findViewById(R.id.ratingBar)).setRating(intent.getFloatExtra("rating", 0));
 	}
 
 	@Override

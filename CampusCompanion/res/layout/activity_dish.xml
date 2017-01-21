@@ -8,4 +8,48 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="net.ddns.richardkellnberger.campuscompanion.DishActivity" >
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/priceTag"
+        android:layout_toStartOf="@+id/priceTag"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@null"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingStart="@null"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/priceTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:paddingEnd="@null"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@null"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ratingBar"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/noPicYet"
+        android:src="@drawable/nopic" />
+
 </RelativeLayout>

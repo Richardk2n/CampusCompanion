@@ -15,9 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
-import net.ddns.richardkellnberger.campuscompanion.helper.ListAdapter;
 import net.ddns.richardkellnberger.campuscompanion.views.FoodFragment;
 
 public class FoodActivity extends FragmentActivity {
@@ -27,9 +25,8 @@ public class FoodActivity extends FragmentActivity {
 	private SimpleDateFormat sdf;
 	private ViewPager pager;
 	private ScreenSlidePagerAdapter pagerAdapter;
-	private ListView listView;
-	private ListAdapter adapter;
 	private String[] mensen = { "Hauptmensa", "Frischraum", "Cafetaria" }; // TODO
+	private Button m1, m2, m3;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,34 +67,16 @@ public class FoodActivity extends FragmentActivity {
 		pager = (ViewPager) findViewById(R.id.pager);
 		pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
 		pager.setAdapter(pagerAdapter);
-		adapter = new ListAdapter();
 
-		final Button m1 = ((Button) findViewById(R.id.m1));
-		final Button m2 = ((Button) findViewById(R.id.m2));
-		final Button m3 = ((Button) findViewById(R.id.m3));
+		m1 = ((Button) findViewById(R.id.m1));
+		m2 = ((Button) findViewById(R.id.m2));
+		m3 = ((Button) findViewById(R.id.m3));
 
 		pager.addOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
 			public void onPageSelected(int page) {
-				listView = (ListView) pagerAdapter.getItem(0).getRootView();
-				if (listView != null) {
-					listView.setAdapter(adapter);
-				}
-				setTitle(mensen[page]);
-				if (page == 0) {
-					m1.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_blue_light, null));
-					m2.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_green_dark, null));
-					m3.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_orange_dark, null));
-				} else if (page == 1) {
-					m1.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_blue_dark, null));
-					m2.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_green_light, null));
-					m3.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_orange_dark, null));
-				} else if (page == 2) {
-					m1.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_blue_dark, null));
-					m2.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_green_dark, null));
-					m3.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_orange_light, null));
-				}
+				update(page);
 			}
 
 			@Override
@@ -130,8 +109,26 @@ public class FoodActivity extends FragmentActivity {
 				pager.setCurrentItem(2);
 			}
 		});
-
-		pager.setCurrentItem(1, true);
+		
+		pager.setCurrentItem(0); //TODO setting default
+		update(0);
+	}
+	
+	private void update(int page) {
+		setTitle(mensen[page]);
+		if (page == 0) {
+			m1.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_blue_light, null));
+			m2.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_green_dark, null));
+			m3.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_orange_dark, null));
+		} else if (page == 1) {
+			m1.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_blue_dark, null));
+			m2.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_green_light, null));
+			m3.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_orange_dark, null));
+		} else if (page == 2) {
+			m1.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_blue_dark, null));
+			m2.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_green_dark, null));
+			m3.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_orange_light, null));
+		}
 	}
 
 	@Override
@@ -164,9 +161,9 @@ public class FoodActivity extends FragmentActivity {
 		@Override
 		public FoodFragment getItem(int position) {
 			if (fragments[position] == null) {
-				fragments[0] = new FoodFragment();
-				fragments[1] = new FoodFragment();
-				fragments[2] = new FoodFragment();
+				for(int i = 0; i<3; i++) {
+					fragments[i] = new FoodFragment(i);
+				}
 			}
 			return fragments[position];
 		}
