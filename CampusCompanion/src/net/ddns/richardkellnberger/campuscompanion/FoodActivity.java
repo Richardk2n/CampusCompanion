@@ -114,7 +114,6 @@ public class FoodActivity extends FragmentActivity {
 
 		int index = 0;
 		String mensaDB = new SQLHandler(this).getConfig("mensa");
-		System.out.println(mensaDB);
 		if(mensaDB!=null) {
 			for(int i = 0; i<3; i++) {
 				if(mensen[i].equals(mensaDB)) {
@@ -159,6 +158,12 @@ public class FoodActivity extends FragmentActivity {
 		int id = item.getItemId();
 		if (id == R.id.settings) {
 			startActivity(new Intent(this, ConfigActivity.class));
+			return true;
+		}
+		if (id == R.id.menue) {
+			Intent intent = new Intent(this, LaunchActivity.class);
+			intent.putExtra("launch", "no");
+			startActivity(intent);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
