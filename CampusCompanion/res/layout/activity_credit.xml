@@ -10,66 +10,12 @@
     android:gravity="center" >
 
     <TextView
-        android:id="@+id/credit1"
+        android:id="@+id/credittxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="@string/credit1"
+        android:text="@string/credittxt"
         android:gravity="center_horizontal"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/credit2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/credit1"
-        android:text="@string/credit2"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/credit3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/credit2"
-        android:text="@string/credit3"
-        android:gravity="center_horizontal"
-        android:textSize="20sp" />
-    
-    <TextView
-        android:id="@+id/credit4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/credit3"
-        android:text="@string/credit4"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp" />
-    
-    <TextView
-        android:id="@+id/credit5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/credit4"
-        android:text="@string/credit5"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp" />
-    
-    <TextView
-        android:id="@+id/credit6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/credit5"
-        android:text="@string/credit6"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp" />
-    
-    <TextView
-        android:id="@+id/credit7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/credit6"
-        android:text="@string/credit7"
-        android:layout_centerHorizontal="true"
         android:textSize="20sp" />
 
 </RelativeLayout>

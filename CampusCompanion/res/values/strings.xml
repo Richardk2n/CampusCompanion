@@ -23,12 +23,6 @@
     <string name="credits">Credits</string>
     <string name="menue">Menü</string>
     <string name="title_activity_credit">CreditActivity</string>
-    <string name="credit1">Hauptverantwortlich für diese App sind:</string>
-    <string name="credit2">Thilo woasened</string>
-    <string name="credit3">Networking, Kommunmikation, Interfaces</string>
-    <string name="credit4">Richard Kellnberger</string>
-    <string name="credit5">UI, DB und Management</string>
-    <string name="credit6">Adrian Ebert</string>
-    <string name="credit7">Kreativer Input</string>
+    <string name="credittxt">Hauptverantwortlich für diese App sind:\nThilo woasened\nNetworking, Kommunmikation, Interfaces\nRichard Kellnberger\nUI, DB und Management\nAdrian Ebert\nKreativer Input</string>
 
 </resources>
