@@ -86,5 +86,19 @@ public class SQLHandler extends SQLiteOpenHelper {
 			db.update(TABLE_NAME_CONFIG, values, new StringBuilder(KEY_NAME).append("=?").toString(), new String[] { name });
 		}
 	}
+	
+	public void setFood(String food, String place, String category, double price1, double price2, double price3, String date) {
+		
+	}
+	
+	public void getFoodList() {
+		
+	}
+	
+	public int dropFood(String date) {
+		SQLiteDatabase db = getWritableDatabase();
+		
+		return db.delete(TABLE_NAME_FOOD, new StringBuilder(KEY_DATE).append("=?").toString(), new String[] { date });
+	}
 
 }

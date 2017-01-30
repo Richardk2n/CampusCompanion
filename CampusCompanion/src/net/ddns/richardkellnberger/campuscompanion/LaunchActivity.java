@@ -1,5 +1,8 @@
 package net.ddns.richardkellnberger.campuscompanion;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,6 +58,7 @@ public class LaunchActivity extends Activity {
 			Toast.makeText(this, "Nach dem ersten Start bitte die Einstellungen besuchen", Toast.LENGTH_LONG).show();
 		}
 	}
+		
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

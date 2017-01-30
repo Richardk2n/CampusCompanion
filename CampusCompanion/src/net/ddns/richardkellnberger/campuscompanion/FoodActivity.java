@@ -1,7 +1,12 @@
 package net.ddns.richardkellnberger.campuscompanion;
 
+import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,8 +22,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import net.ddns.richardkellnberger.campuscompanion.helper.SQLHandler;
 import net.ddns.richardkellnberger.campuscompanion.views.FoodFragment;
+import thilokru.mensa.IMensa;
+import thilokru.mensa.MensaDataRetriever;
 
 public class FoodActivity extends FragmentActivity {
 
@@ -34,6 +42,8 @@ public class FoodActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_food);
+		
+		cleanDB(new SQLHandler(this));
 
 		sdf = new SimpleDateFormat("E dd.MM.yyyy");
 		day = new Date(System.currentTimeMillis());
@@ -140,6 +150,46 @@ public class FoodActivity extends FragmentActivity {
 			m1.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_blue_dark, null));
 			m2.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_green_dark, null));
 			m3.setBackgroundColor(new ResourcesCompat().getColor(getResources(), android.R.color.holo_orange_light, null));
+		}
+	}
+	
+	private void cleanDB(SQLHandler sql) {
+		long time = System.currentTimeMillis()-24*60*60*1000;
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("E dd.MM.yyyy");
+		Date day = new Date(time);
+		String fday = sdf.format(day);
+		updateDB(sql, fday);
+		while(sql.dropFood(fday)!=0) {
+			time -= 24*60*60*1000;
+			day.setTime(time);
+			fday = sdf.format(day);
+		}
+	}
+	
+	private void updateDB(final SQLHandler sql, final String day) {
+		if(!day.equals(sql.getConfig("lastPull"))) {
+			//TODO update DB
+
+			new Timer(true).schedule(new TimerTask() {
+				
+				@Override
+				public void run() {
+					try {
+						MensaDataRetriever data = new MensaDataRetriever(new URL("http://ub.campusapp.creatives-at-work.de/data_1_1_0.json"));
+						Map<String, Map<String, Double>> food = data.getFoodPriceList(new Date(System.currentTimeMillis()), IMensa.FoodSource.MENSA, IMensa.Role.STUDENT);
+						for(String key: food.keySet()) {
+							System.out.println(key);
+						}
+						
+						
+						
+						sql.setConfig("lastPull", day);
+					} catch (IOException e) {
+						Toast.makeText(FoodActivity.this, "Keine Internetverbindung", Toast.LENGTH_LONG).show();
+					}
+				}
+			}, 0);
 		}
 	}
 
